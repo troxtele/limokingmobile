@@ -1,0 +1,3105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel=stylesheet
+    href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
+    type=text/css media=all>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Montserrat Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Merriweather Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Mystery Font -->
+    <link rel=stylesheet
+    href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
+    type=text/css media=all>
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Swiper Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+
+    <!-- Alpine js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+    ></script>
+  </head>
+
+  <!-- Title -->
+  <title>LimoKing</title>
+  <body
+    x-data="{ navOpen: false }"
+    :class="navOpen ? 'overflow-hidden' : 'overflow-visible' "
+    class="text-slate-50 font-hind relative"
+  >
+    <!----------------------------------------->
+    <!----- Header Section ----->
+    <!----------------------------------------->
+    <header class="z-40 relative">
+      <div class="header bg-default-black text-slate-50 py-2 md:py-8">
+        <div class="container">
+          <div
+            class="content py-2 flex flex-col-reverse md:grid md:grid-cols-3 justify-center items-center gap-10 md:gap-32 md:justify-end"
+          >
+            <!-- Logo -->
+            <div
+              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center mr-10"
+            >
+              <a href="./index.html">
+                <img
+                  class="max-w-[12rem]"
+                  src="./images/header/logo.png"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <!-- Contact Info -->
+            <div
+              class="contact-info w-full flex flex-col sm:flex-row md:flex-col gap:2 sm:gap-6 justify-center md:justify-between items-center md:items-end md:col-span-1"
+            >
+              <div class="number flex items-center gap-4">
+                <span><img src="images/header/phone-icon.png" alt="" /></span>
+                <span>(1)-212-333-4343</span>
+              </div>
+              <div class="email flex items-center gap-4">
+                <span
+                  ><img src="images/header/envelope-icon.png" alt=""
+                /></span>
+                <span>reserve@limokingtheme.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!----------------------------------------->
+    <!----- Nav Large Screen ----->
+    <!----------------------------------------->
+    <nav
+      class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl shadow-lg"
+    >
+      <!-- Large Screen -->
+      <div class="nav_large hidden md:block transition-all duration-500">
+        <div class="container flex justify-end">
+          <div class="flex gap-32 lg:gap-56 pt-5 text-zinc-300">
+            <div class="nav uppercase font-medium text-sm">
+              <ul
+                x-data="{active: 'service'}"
+                class="nav_links flex justify-center items-center lg:gap-5"
+              >
+                <li>
+                  <a
+                    x-on:click="active = 'home'"
+                    x-bind:class="active === 'home' ? 'active_link': '' "
+                    href="index.html"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    >home</a
+                  >
+                </li>
+                <!-- About Us -->
+                <li class="relative">
+                  <a
+                    x-on:click="active = 'about'"
+                    x-bind:class="active === 'about' ? 'active_link': '' "
+                    href="about.html"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    >pages</a
+                  >
+                  <!-- Sub menu -->
+                  <ul
+                    class="submenu absolute top-full bg-zinc-800 z-50 capitalize opacity-0 invisible transition-all duration-500"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >About us</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >About us 2</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >service</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >personal</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20 uppercase"
+                        >faq</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >contact page</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >gallery</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >404 page</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-slate-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-transparent"
+                        >testimonial</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <!-- Our fleet -->
+                <li class="relative">
+                  <a
+                    x-on:click="active = 'ourFeet'"
+                    x-bind:class="active === 'ourFeet' ? 'active_link': '' "
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    >our fleet</a
+                  >
+                  <!-- Sub menu -->
+                  <ul
+                    class="submenu absolute top-full bg-zinc-800 z-50 capitalize opacity-0 invisible transition-all duration-500"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >Fleet 2 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >Fleet 3 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >Fleet 4 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >Fleet Modern 2 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20 uppercase"
+                        >Fleet Modern 3 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-transparent"
+                        >Fleet Modern 4 Columns</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <!-- Service rate -->
+                <li>
+                  <a
+                    x-on:click="active = 'serivce'"
+                    x-bind:class="active === 'service' ? 'active_link': '' "
+                    href="rate.html"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    >service rate</a
+                  >
+                </li>
+                <!-- Portfolio -->
+                <li class="relative">
+                  <a
+                    x-on:click="active = 'portfolio'"
+                    x-bind:class="active === 'portfolio' ? 'active_link': '' "
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    >portfolio</a
+                  >
+                  <!-- Sub menu -->
+                  <div
+                    class="submenu capitalize p-6 absolute top-full -right-[206%] lg:-right-[309%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                  >
+                    <!-- Lists -->
+                    <div class="lists_container flex">
+                      <!-- List 1 -->
+                      <div class="sub_list flex flex-col gap-4 pr-6">
+                        <a href="#" class="text-zinc-100 text-lg px-3"
+                          >Portfolio Classic</a
+                        >
+                        <ul class="w-72 lg:w-96 text-zinc-300">
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 1 Column (Both Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 2 Columns (Right Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 3 Columns</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 4 Columns</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 2 Columns, No Space</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 3 Columns, No Space</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 4 Columns, No Space</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Single</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- List 2 -->
+                      <div
+                        class="sub_list flex flex-col gap-4 pl-6 border-l-[1px] border-zinc-600/30"
+                      >
+                        <a href="#" class="text-zinc-100 text-lg px-3"
+                          >Portfolio With Filter</a
+                        >
+                        <ul class="w-72 lg:w-96 text-zinc-300">
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 1 Col With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 2 Cols With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 3 Cols With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 4 Cols With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Modern 3 Cols With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Modern 4 Cols With Filter</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- Blog -->
+                <li class="relative">
+                  <a
+                    x-on:click="active = 'blog'"
+                    x-bind:class="active === 'blog' ? 'active_link': '' "
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    >blog</a
+                  >
+                  <!-- Sub menu -->
+                  <div
+                    class="submenu capitalize p-6 absolute top-full -right-[200%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                  >
+                    <!-- Lists -->
+                    <div class="lists_container flex">
+                      <!-- List 1 -->
+                      <div class="sub_list flex flex-col gap-4 pr-6">
+                        <a href="#" class="text-zinc-100 text-lg px-3"
+                          >Blog Column</a
+                        >
+                        <ul class="w-72 lg:w-96 text-zinc-300">
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 1 Column (Right Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 2 Columns (Right Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 3 Columns</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 4 Columns</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- List 2 -->
+                      <div
+                        class="sub_list flex flex-col gap-4 pl-6 border-l-[1px] border-zinc-600/30"
+                      >
+                        <a href="#" class="text-zinc-100 text-lg px-3"
+                          >Blog Masonry</a
+                        >
+                        <ul class="w-72 lg:w-96 text-zinc-300">
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 2 Columns – Masonry (Right Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 3 Columns – Masonry</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 4 Columns – Masonry</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog Full</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- Search Button -->
+            <div x-data="{ open: false }" class="search relative z-50">
+              <button x-on:click="open = !open" class="search_button">
+                <img
+                  class="max-w-[1.3rem]"
+                  src="./images/header/magnifier-light.png"
+                  alt=""
+                />
+              </button>
+              <div
+                x-bind:class="open ? 'h_16':'' "
+                class="search_input absolute flex justify-center items-center px-4 bg-zinc-900/80 backdrop-blur-2xl top-full right-0 w-48 h-0 transition-all duration-500"
+              >
+                <input
+                  type="text"
+                  class="input w-full h-full border-none focus:outline-none bg-transparent placeholder:select-none placeholder:text-slate-200"
+                  placeholder="Type keywords"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!----------------------------------------->
+    <!----- Sticky Nav Small Screen ----->
+    <!----------------------------------------->
+    <nav
+      class="md:hidden bg-default-black backdrop-blur-3xl sticky top-0 md:bg-zinc-900/80 z-30 md:backdrop-blur-xl shadow-lg"
+    >
+      <div class="container">
+        <div class="flex justify-between items-center py-3 sm:py-5">
+          <a href="./index.html" class="nav_logo">
+            <img class="w-28" src="./images/header/logo.png" alt="logo" />
+          </a>
+          <div class="nav">
+            <!-- Nav btn -->
+            <div
+              @click="navOpen = !navOpen"
+              class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
+            >
+              <span class="line w-8 h-[3px] bg-slate-200"></span>
+              <span class="line h-[3px] bg-slate-200"></span>
+              <span class="line h-[3px] bg-slate-200"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!----------------------------------------->
+    <!----- Floating Nav options ----->
+    <!----------------------------------------->
+    <div
+      class="nav_small fixed top-0 left-0 bottom-0 w-64 sm:w-80 z-50 transition-all duration-500"
+      x-bind:class="navOpen ? 'visible ' : 'invisible' "
+      x-cloak
+    >
+      <!-- Cross Button -->
+      <div
+        x-on:click="navOpen = false "
+        :class="navOpen ? 'visible opacity-100 rotate-180' : 'invisible opacity-0' "
+        class="cross z-50 fixed top-6 right-4 font-bold text-white text-xl p-2 cursor-pointer transform duration-1000"
+      >
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </div>
+      <!-- floating -->
+      <div
+        x-bind:class="navOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0' "
+        class="wrapper absolute top-0 left-0 bottom-0 overflow-auto transform transition-all duration-700 bg-default-small-nav w-64 sm:w-80 bg-zinc-800"
+      >
+        <div class="logo py-10 px-6 flex justify-between items-center">
+          <a href="./index.html">
+            <img class="w-[10rem] flex" src="./images/header/logo.png" alt="" />
+          </a>
+        </div>
+        <ul
+          class="text-white uppercase py-2 flex flex-col items-start bg-default-small-nav"
+        >
+          <!-- Home -->
+
+          <li
+            class="flex border-y-[1px] border-stone-600/20 py-2 w-full pl-4 uppercase"
+          >
+            <a
+              @click="nav = false"
+              href="./index.html"
+              class="hover:text-white transition-all duration-300"
+              >home</a
+            >
+          </li>
+
+          <!-- About -->
+          <li x-data="{open: false}" class="flex flex-col w-full">
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./about.html"
+                class="hover:text-white transition-all duration-300 w-full flex"
+                >pages</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-900/30 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-zinc-900/40"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >about us</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-white transition-all duration-300"
+                  >About Us 2</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Personnel</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >faq</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Contact Page</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >gallery</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Testimonial</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- services -->
+          <li
+            class="flex border-y-[1px] border-stone-600/20 py-2 w-full pl-4 capitalize"
+          >
+            <a
+              @click="nav = false"
+              href="./rate.html"
+              class="hover:text-white transition-all duration-300 uppercase"
+              >service rates</a
+            >
+          </li>
+          <!-- Our Fleet -->
+          <li x-data="{open: false}" class="flex flex-col w-full">
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-white transition-all duration-300 w-full flex"
+                >Our Fleet</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-900/30 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-zinc-900/40"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-white transition-all duration-300"
+                  >Fleet 2 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-white transition-all duration-300"
+                  >Fleet 3 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Fleet 4 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Modern 2 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Modern 3 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Modern 4 Columns</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- Portfolio -->
+          <li
+            x-data="{open: false}"
+            class="flex flex-col border-y-[1px] border-stone-600/20 w-full"
+          >
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-white transition-all duration-300 w-full flex"
+                >portfolio</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-900/30 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+            <!-- Inner SubMenu -->
+            <ul
+              :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-zinc-900/40"
+            >
+              <!-- Portfolio Classic -->
+              <li
+                x-data="{open: false}"
+                class="capitalize border-b-[1px] border-stone-600/20"
+              >
+                <div class="flex justify-between items-center w-full px-4 py-2">
+                  <a
+                    @click="nav = false"
+                    href="./index.html"
+                    class="hover:text-white transition-all duration-300 w-full flex"
+                    >portfolio classic</a
+                  >
+                  <!-- angle -->
+                  <div
+                    @click="open = !open"
+                    class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+                  >
+                    <i
+                      :class="open ? 'rotate-90' : 'rotate-0' "
+                      class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-700/50 flex items-center justify-center h-7 w-7"
+                    ></i>
+                  </div>
+                </div>
+                <!-- Inner Sub menu -->
+                <ul
+                  :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+                  class="overflow-hidden transform transition-all duration-1000 bg-cyan-400/30"
+                >
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 1 Column (Both Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 2 Columns (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 3 Columns</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 4 Columns</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 2 Columns, No Space</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 3 Columns, No Space</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 4 Columns, No Space</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Single</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >chooseus block</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <!-- portfolio with filter  -->
+              <li x-data="{open: false}" class="capitalize">
+                <div class="flex justify-between items-center w-full px-4 py-2">
+                  <a
+                    @click="nav = false"
+                    href="./index.html"
+                    class="hover:text-white transition-all duration-300 w-full flex"
+                    >Portfolio With Filter</a
+                  >
+                  <!-- angle -->
+                  <div
+                    @click="open = !open"
+                    class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+                  >
+                    <i
+                      :class="open ? 'rotate-90' : 'rotate-0' "
+                      class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-700/50 flex items-center justify-center h-7 w-7"
+                    ></i>
+                  </div>
+                </div>
+                <!-- Inner Sub menu -->
+                <ul
+                  :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+                  class="overflow-hidden transform transition-all duration-1000 bg-cyan-400/30"
+                >
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 1 Col With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 2 Columns (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 2 Cols With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 3 Cols With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 4 Cols With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Modern 3 Cols With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Modern 4 Cols With Filter</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <!-- blog -->
+          <li
+            x-data="{open: false}"
+            class="flex flex-col border-b-[1px] border-stone-600/20 w-full"
+          >
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-white transition-all duration-300 w-full flex"
+                >blog</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-900/30 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+            <!-- Inner SubMenu -->
+            <ul
+              :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-zinc-900/40"
+            >
+              <!-- list 1 -->
+              <li
+                x-data="{open: false}"
+                class="capitalize border-b-[1px] border-stone-600/20"
+              >
+                <div class="flex justify-between items-center w-full px-4 py-2">
+                  <a
+                    @click="nav = false"
+                    href="./index.html"
+                    class="hover:text-white transition-all duration-300 w-full flex"
+                    >Blog Column</a
+                  >
+                  <!-- angle -->
+                  <div
+                    @click="open = !open"
+                    class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+                  >
+                    <i
+                      :class="open ? 'rotate-90' : 'rotate-0' "
+                      class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-700/50 flex items-center justify-center h-7 w-7"
+                    ></i>
+                  </div>
+                </div>
+                <!-- Inner Sub menu -->
+                <ul
+                  :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+                  class="overflow-hidden transform transition-all duration-1000 bg-cyan-400/30"
+                >
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 1 Column (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 2 Columns (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 3 Columns</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 4 Columns</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <!-- list 2 -->
+              <li x-data="{open: false}" class="capitalize">
+                <div class="flex justify-between items-center w-full px-4 py-2">
+                  <a
+                    @click="nav = false"
+                    href="./index.html"
+                    class="hover:text-white transition-all duration-300 w-full flex"
+                    >Blog Masonry</a
+                  >
+                  <!-- angle -->
+                  <div
+                    @click="open = !open"
+                    class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+                  >
+                    <i
+                      :class="open ? 'rotate-90' : 'rotate-0' "
+                      class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-700/50 flex items-center justify-center h-7 w-7"
+                    ></i>
+                  </div>
+                </div>
+                <!-- Inner Sub menu -->
+                <ul
+                  :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+                  class="overflow-hidden transform transition-all duration-1000 bg-cyan-400/30"
+                >
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 2 Columns – Masonry (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 3 Columns – Masonry</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 4 Columns – Masonry</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog Full</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!----------------------------------------->
+    <!-----Main Section ----->
+    <!----------------------------------------->
+    <main>
+      <div
+        class="wrapper bg-rate-main-bg bg-center bg-cover bg-no-repeat -mt-[61px] pt-[8rem] pb-[4.5rem]"
+      >
+        <div class="container text-center h-full">
+          <h1 class="h-full capitalize font-semibold text-4xl md:text-6xl">
+            service rate
+          </h1>
+        </div>
+      </div>
+    </main>
+    <!----------------------------------------->
+    <!-----Rate Section ----->
+    <!----------------------------------------->
+    <section>
+      <div class="container text-stone-700 py-6 grid text-center">
+        <!-- Large Screen Content -->
+        <div class="hidden large_content md:grid grid-cols-4">
+          <!-- Cars -->
+          <div class="cars mt-32 col-span-1">
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-11.jpg"
+                alt="car-11"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-21.jpg"
+                alt="car-11"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-31.jpg"
+                alt="car-11"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-41.jpg"
+                alt="car-11"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-51.jpg"
+                alt="car-51"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-61.jpg"
+                alt="car-61"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-71.jpg"
+                alt="car-71"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-81.jpg"
+                alt="car-81"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+            <div
+              class="car h-[5.813rem] flex gap-4 justify-center items-center"
+            >
+              <img
+                class="max-w-[4.9rem]"
+                src="./images/cars/car-91.jpg"
+                alt="car-91"
+              />
+              <div class="name">
+                <h4 class="uppercase font-semibold text-md">
+                  BLACK LINCOLN MKT
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing -->
+          <div class="pricing grid grid-cols-3 gap-1 col-span-3">
+            <div class="item_1">
+              <!-- Title -->
+              <div
+                class="title flex flex-col gap-1 items-center h-32 bg-default-color polygon"
+              >
+                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
+                  per hour rate
+                </h3>
+                <span class="text-sm text-slate-50">eg. Event, Party</span>
+              </div>
+              <!-- Prices -->
+              <div class="prices">
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">$89</h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">$59</h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">$69</h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">$79</h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">$89</h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $109
+                      </h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $129
+                      </h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $119
+                      </h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">$99</h3>
+                      <span class="uppercase text-lg">/ hour</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Book btn -->
+              <a href="#" class="">
+                <button
+                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                >
+                  book now
+                </button>
+              </a>
+            </div>
+            <div class="item_2">
+              <!-- Title -->
+              <div
+                class="title flex flex-col gap-1 items-center h-32 bg-default-black polygon"
+              >
+                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
+                  per day rate
+                </h3>
+                <span class="text-sm text-stone-400"
+                  >eg. Wedding, Long trip</span
+                >
+              </div>
+              <!-- Prices -->
+              <div class="prices">
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $579
+                      </h3>
+                      <span class="uppercase text-lg">/ day</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $489
+                      </h3>
+                      <span class="uppercase text-lg">/ day</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $489
+                      </h3>
+                      <span class="uppercase text-lg">/ day</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $449
+                      </h3>
+                      <span class="uppercase text-lg">/ day</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $539
+                      </h3>
+                      <span class="uppercase text-lg">/ day</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $799
+                      </h3>
+                      <span class="uppercase text-lg">/ day</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-stone-400 font-bold text-3xl">-</h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*Not Available</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $779
+                      </h3>
+                      <span class="uppercase text-lg">/ day</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $599
+                      </h3>
+                      <span class="uppercase text-lg">/ day</span>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Book btn -->
+              <a href="#" class="">
+                <button
+                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                >
+                  book now
+                </button>
+              </a>
+            </div>
+            <div class="item_3">
+              <!-- Title -->
+              <div
+                class="title flex flex-col gap-1 items-center h-32 bg-default-black polygon"
+              >
+                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
+                  AIRPORT TRANSFER
+                </h3>
+                <span class="text-sm text-stone-400">*Flat Rate</span>
+              </div>
+              <!-- Prices -->
+              <div class="prices">
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $119-139
+                      </h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $99-$129
+                      </h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-stone-400 font-bold text-3xl">-</h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >* Not Available</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $150-$190
+                      </h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-stone-400 font-bold text-3xl">-</h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >* Not Available</span
+                    >
+                  </div>
+                </div>
+                <!-- Price -->
+                <div class="price py-4 border-b border-stone-300">
+                  <div class="rate text-center">
+                    <div class="flex items-end justify-center gap-1">
+                      <h3 class="text-default-color font-bold text-3xl">
+                        $120-150
+                      </h3>
+                    </div>
+                    <span class="text-[.9rem] text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Book btn -->
+              <a href="#" class="">
+                <button
+                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                >
+                  book now
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Small Screen Content -->
+        <div class="md:hidden small_cotent grid gap-10 text-center">
+          <div class="item_1 flex flex-col gap-6">
+            <!-- Cars ** & Rates ** -->
+            <!-- cars -->
+            <div class="car_rate_wrapper">
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Title -->
+                <div
+                  class="title px-2 col-start-2 col-end-3 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-color polygon"
+                >
+                  <h3
+                    class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                  >
+                    per hour rate
+                  </h3>
+                  <span class="text-sm text-slate-50">eg. Event, Party</span>
+                </div>
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-11.jpg"
+                    alt="car-11"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN MKT
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-21.jpg"
+                    alt="car-21"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $59
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-31.jpg"
+                    alt="car-31"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES GRAND SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $69
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-41.jpg"
+                    alt="car-41"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK CADILLAC SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $59
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-51.jpg"
+                    alt="car-51"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        CADILLAC ESCALADE LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-61.jpg"
+                    alt="car-61"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        LINCOLN STRETCH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $109
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-71.jpg"
+                    alt="car-71"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        HUMMER STRECTH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $129
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-81.jpg"
+                    alt="car-81"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        FORD PARTY BUS LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $119
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Last item with button -->
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-x-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-91.jpg"
+                    alt="car-91"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES PARTY LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $99
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Book btn -->
+                <a href="#" class="col-start-2 col-end-3">
+                  <button
+                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                  >
+                    book now
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item_2 flex flex-col items-end gap-6">
+            <!-- Cars ** & Rates ** -->
+            <!-- cars -->
+            <div class="car_rate_wrapper">
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Title -->
+                <div
+                  class="title px-2 col-start-2 col-end-3 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-black polygon"
+                >
+                  <h3
+                    class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                  >
+                    per day rate
+                  </h3>
+                  <span class="text-sm text-stone-400"
+                    >eg. Wedding, Long trip</span
+                  >
+                </div>
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-11.jpg"
+                    alt="car-11"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN MKT
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $579
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-21.jpg"
+                    alt="car-21"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $489
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-31.jpg"
+                    alt="car-31"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES GRAND SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $489
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-41.jpg"
+                    alt="car-41"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK CADILLAC SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $449
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-51.jpg"
+                    alt="car-51"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        CADILLAC ESCALADE LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $539
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-61.jpg"
+                    alt="car-61"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        LINCOLN STRETCH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $799
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-71.jpg"
+                    alt="car-71"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        HUMMER STRECTH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3 class="text-stone-500 font-bold text-2xl sm:text-3xl">
+                        -
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-400"
+                      >*Not Available</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-81.jpg"
+                    alt="car-81"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        FORD PARTY BUS LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $799
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Last item with button -->
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-x-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-91.jpg"
+                    alt="car-91"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES PARTY LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $599
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*$3/hour Fuel Sercharge</span
+                    >
+                  </div>
+                </div>
+                <!-- Book btn -->
+                <a href="#" class="col-start-2 col-end-3">
+                  <button
+                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                  >
+                    book now
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item_3 flex flex-col items-end gap-6">
+            <!-- Cars ** & Rates ** -->
+            <!-- cars -->
+            <div class="car_rate_wrapper">
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Title -->
+                <div
+                  class="title px-2 col-start-2 col-end-3 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-black polygon"
+                >
+                  <h3
+                    class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                  >
+                    AIRPORT TRANSFER
+                  </h3>
+                  <span class="text-sm text-stone-400">*Flat Rate</span>
+                </div>
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-11.jpg"
+                    alt="car-11"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN MKT
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $119-139
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-21.jpg"
+                    alt="car-21"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-31.jpg"
+                    alt="car-31"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES GRAND SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-41.jpg"
+                    alt="car-41"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK CADILLAC SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-51.jpg"
+                    alt="car-51"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        CADILLAC ESCALADE LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $99-$129
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-61.jpg"
+                    alt="car-61"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        LINCOLN STRETCH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3 class="text-stone-400 font-bold text-2xl sm:text-3xl">
+                        -
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*Not Available</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-71.jpg"
+                    alt="car-71"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        HUMMER STRECTH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $150-$190
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-81.jpg"
+                    alt="car-81"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        FORD PARTY BUS LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3 class="text-stone-400 font-bold text-2xl sm:text-3xl">
+                        -
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*Not Available</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Last item with button -->
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-x-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-91.jpg"
+                    alt="car-91"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES PARTY LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $120-150
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+                <!-- Book btn -->
+                <a href="#" class="col-start-2 col-end-3">
+                  <button
+                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                  >
+                    book now
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------->
+    <!-----Experience Section ----->
+    <!----------------------------------------->
+    <section class="p-0">
+      <div class="about_top bg-about-bg bg-center bg-cover bg-no-repeat py-20">
+        <div class="container">
+          <div class="content">
+            <div class="header">
+              <h2
+                class="uppercase relative text-3xl font-bold after:block after:mt-6 after:w-32 after:h-[2px] after:bg-default-color"
+              >
+                we promise, you will<br />have the best experience
+              </h2>
+            </div>
+            <p class="text-xs mt-10 text-gray-300">
+              Sed posuere consectetur est at lobortis. Cum sociis natoque
+              penatibus et magnis dis <br />
+              parturient montes, nascetur ridiculus mus. Nullam quis risus eget
+              urna mollis ornare vel eu <br />
+              leo. Cras mattis consectetur purus sit amet fermentum.
+            </p>
+          </div>
+
+          <a href="#">
+            <button
+              class="mt-10 text-xl py-3 px-5 rounded-sm bg-default-color font-merri"
+            >
+              Book Now
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------->
+    <!-----About Section ----->
+    <!----------------------------------------->
+    <section class="bg-default-black text-zinc-600">
+      <div class="container">
+        <div
+          class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 md:gap-4 text-zinc-300 font-monster"
+        >
+          <!-- About -->
+          <div class="about">
+            <h3 class="uppercase text-sm font-semibold">about us</h3>
+            <div class="flex flex-col gap-4">
+              <p class="text-[0.9rem] mt-7">
+                Cum sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus. Morbi leo risus, porta
+              </p>
+              <div class="logo">
+                <a href="./index.html">
+                  <img class="w-40" src="./images/bottom/logo.png" alt="logo" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact info -->
+          <div class="contact-info">
+            <h3 class="uppercase text-sm font-semibold">contact info</h3>
+            <div class="info text-sm mt-7 flex flex-col gap-4">
+              <div class="address">
+                <span>Address: 184 Main Collins Street West Victoria 8007</span>
+              </div>
+              <ul class="grid gap-2">
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa fa-phone"></i>
+                    <span>+1800-222-3333</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa fa-mobile"></i>
+                    <span>(1)-212-333-4343</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa-regular fa-envelope"></i>
+                    <span>book@limokingtheme.com</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Recent post -->
+          <div class="recent_post text-sm">
+            <h3 class="uppercase text-sm font-semibold">recent post</h3>
+            <ul class="grid gap-3 mt-7 max-w-[240px]">
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Sem Porta Mollis Parturi</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Nullam Lorem Mattis Purus</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Nibh Sem Sit Ullamcorper</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Donec luctus imperdiet</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Works -->
+          <div class="recent-works">
+            <h3 class="uppercase text-sm font-semibold">recent works</h3>
+
+            <div class="mt-7 grid_img grid grid-cols-3 gap-3 xs:max-w-[14rem]">
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1058269641-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1427849831-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1837970511-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_2580348261-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_716302901-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_770756561-150x150.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------->
+    <!-----Footer Section ----->
+    <!----------------------------------------->
+    <footer class="bg-zinc-900 py-4 text-sm">
+      <div class="container">
+        <div class="content flex justify-between flex-wrap gap-4">
+          <div class="copyright">
+            <h5 class="capitalize text-zinc-500">
+              Copyright 2022, All Right Reserved
+            </h5>
+          </div>
+          <div class="link_icons">
+            <ul class="flex gap-4 text-md">
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-dribbble"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-pinterest"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-google-plus-g"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- overlay -->
+    <div
+      @click="navOpen = false"
+      x-bind:class="navOpen ? 'bg-black/70  visible backdrop-blur-md' : 'invisible backdrop-blur-0'"
+      class="overlay absolute inset-0 transition-all duration-500 z-40"
+    ></div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
